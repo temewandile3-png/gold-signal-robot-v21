@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gold Signal Robot V21</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #0b0f14;
+      color: white;
+    }
+
+    .app {
+      max-width: 480px;
+      margin: auto;
+      min-height: 100vh;
+      padding: 22px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .gold {
+      color: #f5c542;
+    }
+
+    .status {
+      text-align: center;
+      padding: 14px;
+      border-radius: 14px;
+      background: #151c25;
+      margin-bottom: 20px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #35d07f;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+
+    .signal {
+      background: #151c25;
+      border-radius: 20px;
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    .signal h2 {
+      margin-top: 0;
+    }
+
+    .waiting {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      color: #f5c542;
+      padding: 20px 0;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #27313d;
+    }
+
+    .row:last-child {
+      border-bottom: none;
+    }
+
+    .label {
+      color: #9ba7b5;
+    }
+
+    .value {
+      font-weight: bold;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    button {
+      flex: 1;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 15px;
+      background: #f5c542;
+      color: #111;
+    }
+
+    .rules {
+      background: #151c25;
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    .rules h3 {
+      margin-top: 0;
+    }
+
+    .rules li {
+      margin-bottom: 10px;
+      color: #c4ccd6;
+    }
+
+    .footer {
+      text-align: center;
+      color: #697585;
+      margin-top: 25px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <div class="header">
+      <h1><span class="gold">GOLD</span> SIGNAL ROBOT</h1>
+      <p>V21 • XAUUSD</p>
+    </div>
+
+    <div class="status">
+      <span class="dot"></span>
+      Signal engine online
+    </div>
+
+    <div class="signal">
+      <h2>Current Signal</h2>
+
+      <div class="waiting">
+        SIGNAL WAIT
+      </div>
+
+      <div class="row">
+        <span class="label">Symbol</span>
+        <span class="value">XAUUSD</span>
+      </div>
+
+      <div class="row">
+        <span class="label">Timeframes</span>
+        <span class="value">M5 / M15</span>
+      </div>
+
+      <div class="row">
+        <span class="label">Mode</span>
+        <span class="value">PAPER</span>
+      </div>
+    </div>
+
+    <div class="signal">
+      <h2>Trade Levels</h2>
+
+      <div class="row">
+        <span class="label">Entry</span>
+        <span class="value">--</span>
+      </div>
+
+      <div class="row">
+        <span class="label">Stop Loss</span>
+        <span class="value">--</span>
+      </div>
+
+      <div class="row">
+        <span class="label">Take Profit</span>
+        <span class="value">--</span>
+      </div>
+    </div>
+
+    <div class="rules">
+      <h3>V21 Rules</h3>
+      <ul>
+        <li>Confirm direction on M15.</li>
+        <li>Use M5 for signal confirmation.</li>
+        <li>Wait for a confirmed setup.</li>
+        <li>No automatic trade execution.</li>
+        <li>Paper/signal mode only.</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      Gold Signal Robot V21
+    </div>
+
+  </div>
+
+</body>
+</html>
