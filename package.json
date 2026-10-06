@@ -1,0 +1,13 @@
+{
+  "name": "gold-signal-robot-v21",
+  "version": "1.0.0",
+  "description": "Gold Signal Robot V21",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}
