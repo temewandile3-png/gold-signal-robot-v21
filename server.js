@@ -14,7 +14,7 @@ app.use(cors({
   origin: true,
   methods: ["GET"]
 }));
-
+app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.json({
     service: "Gold Signal Robot V21",
