@@ -38,7 +38,50 @@ app.get("/config", (req, res) => {
     paperMode: true
   });
 });
+app.get("/xauusd", async (req, res) => {
+  try {
+    const response = await fetch(PROVIDER_URL, {
+      headers: {
+        Accept: "application/json"
+      },
+      cache: "no-store",
+      signal: AbortSignal.timeout(10000)
+    });
 
+    if (!response.ok) {
+      throw new Error(`Provider HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    const price = Number(
+      data.price ??
+      data.price_usd ??
+      data.XAU?.price
+    );
+
+    if (!Number.isFinite(price) || price <= 0) {
+      throw new Error("No valid XAU price returned");
+    }
+
+    res.set("Cache-Control", "no-store");
+
+    res.json({
+      symbol: "XAUUSD",
+      price,
+      source: "Gold API",
+      timestamp: new Date().toISOString(),
+      paperMode: true
+    });
+
+  } catch (error) {
+    console.error("XAUUSD feed error:", error.message);
+
+    res.status(502).json({
+      error: "XAUUSD market data unavailable"
+    });
+  }
+});
 app.listen(PORT, () => {
   console.log(`Gold Signal Robot V21 running on port ${PORT}`);
 });
